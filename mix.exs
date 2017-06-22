@@ -4,6 +4,7 @@ defmodule Gocardless.Mixfile do
   def project do
     [app: :gocardless,
      version: "0.1.0",
+     description: "Elixir wrapper for the GoCardless API",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -30,5 +31,13 @@ defmodule Gocardless.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     []
+  end
+
+  defp package do
+    [
+      maintainers: ["overture8", "tosbourn"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/PiggyPot/gocardless"}
+    ]
   end
 end
