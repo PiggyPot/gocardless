@@ -14,6 +14,13 @@ def deps do
 end
 ```
 
+then...
+
+```elixir
+mix deps.get
+```
+
+
 2. Ensure `gocardless` is started before your application:
 
 ```elixir
@@ -34,14 +41,19 @@ config :gocardless,
 4. Example usage:
 
 ```elixir
-iex> params = %{email: "new@email.com"}
-iex> Gocardless.Client.update_customer("CU000999999998", %{customers: params})
+iex> params = %{
+  email: "name@email.com",
+  given_name: "Firstname",
+  family_name: "Lastname",
+  country_code: "GB"
+}
+iex> Gocardless.Client.create_customer(%{customers: params})
 {:ok,
   %{"customers" => %{"address_line1" => nil, "address_line2" => nil,
       "address_line3" => nil, "city" => nil, "company_name" => nil,
       "country_code" => "GB", "created_at" => "2017-06-23T13:04:45.459Z",
-      "email" => "new@email.com", "family_name" => "Lastname",
-      "given_name" => "Firstname", "id" => "CU000999999998", "language" => "en",
+      "email" => "name@email.com", "family_name" => "Lastname",
+      "given_name" => "Firstname", "id" => "CU0009999999", "language" => "en",
       "metadata" => %{}, "postal_code" => nil, "region" => nil,
       "swedish_identity_number" => nil}}}
 ```

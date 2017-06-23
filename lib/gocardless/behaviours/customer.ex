@@ -72,7 +72,7 @@ defmodule Gocardless.Behaviour.Customer do
            "address_line3" => nil, "city" => nil, "company_name" => nil,
            "country_code" => "GB", "created_at" => "2017-06-23T13:04:45.459Z",
            "email" => "name@email.com", "family_name" => "Lastname",
-           "given_name" => "Firstname", "id" => "CU000201WWT5RS", "language" => "en",
+           "given_name" => "Firstname", "id" => "CU00099999999", "language" => "en",
            "metadata" => %{}, "postal_code" => nil, "region" => nil,
            "swedish_identity_number" => nil}}}
   """
