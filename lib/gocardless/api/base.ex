@@ -10,7 +10,7 @@ defmodule Gocardless.Api.Base do
   end
 
   def request(:post, path, body) do
-    hdrs = [body: Poison.encode!(body)] 
+    hdrs = [body: Poison.encode!(body)]
     |> headers
 
     path
@@ -19,7 +19,7 @@ defmodule Gocardless.Api.Base do
   end
 
   def request(:put, path, body) do
-    hdrs = [body: Poison.encode!(body)] 
+    hdrs = [body: Poison.encode!(body)]
     |> headers
 
     path
@@ -28,12 +28,14 @@ defmodule Gocardless.Api.Base do
   end
 
   def decode_json(resp_map) do
-    body = resp_map.body
-    |> Poison.decode!
+    body = case resp_map.body do
+      "" -> "No Body"
+      body -> Poison.decode!(body)
+    end
 
     case resp_map.status_code do
-      200 -> {:ok, body}
-      x when x > 200 -> {:error, body}
+      x when x in [200, 201, 204] -> {:ok, body}
+      _ -> {:error, body}
     end
   end
 

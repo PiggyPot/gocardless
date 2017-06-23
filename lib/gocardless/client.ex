@@ -16,15 +16,15 @@ defmodule Gocardless.Client do
   def list_customers(params \\ %{}) do
     GenServer.call(@client_name, {:list_customers, params})
   end
-  
+
   def get_customer(customer_id) do
     GenServer.call(@client_name, {:get_customer, customer_id})
   end
-  
+
   def create_customer(params) do
     GenServer.call(@client_name, {:create_customer, params})
   end
-  
+
   def update_customer(customer_id, params) do
     GenServer.call(@client_name, {:update_customer, customer_id, params})
   end

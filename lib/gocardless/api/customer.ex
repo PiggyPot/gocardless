@@ -1,7 +1,7 @@
 defmodule Gocardless.Api.Customer do
   import Gocardless.Api.Base
 
-  def list(params) do
+  def list(params \\ %{}) do
     url_params = params |> URI.encode_query
 
     request(:get, "/customers?#{url_params}")
