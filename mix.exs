@@ -17,8 +17,8 @@ defmodule Gocardless.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger],
-     mod: {Gocardless.Application, []}]
+    [extra_applications: [:logger, :httpotion],
+     mod: {Gocardless, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -31,7 +31,9 @@ defmodule Gocardless.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:ex_doc, "~> 0.14", only: :dev}]
+    [{:ex_doc, "~> 0.14", only: :dev},
+     {:httpotion, "~> 3.0.2"},
+     {:poison, "~> 3.0"}]
   end
 
   defp package do

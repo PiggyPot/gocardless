@@ -1,18 +1,8 @@
 defmodule Gocardless do
-  @moduledoc """
-  Documentation for Gocardless.
-  """
+  @moduledoc false
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Gocardless.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    Gocardless.Client.start_link
   end
 end
