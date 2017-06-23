@@ -64,7 +64,7 @@ You can read the docs [here](https://hexdocs.pm/gocardless)
 
 ## Implementation state
 
-These are the priorities for us right now. If you want anything else feel free to add a pull request.
+These are the priorities for use right now. If you want anything else feel free to add a pull request.
 
 - [x] Customers
   - [x] List
