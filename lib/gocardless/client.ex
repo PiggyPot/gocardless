@@ -2,12 +2,12 @@ defmodule Gocardless.Client do
   @moduledoc """
   Starts up Gocardless Client
 
-  Uses `Gocardless.ClientApi.Customer` and other client APIs 
+  Uses `Gocardless.ClientApi.Customer` and other client APIs
   from `/lib/client_apis/`
   """
   @client_name Gocardless.Client
   use GenServer
-  use Gocardless.ClientApi.{Customer, CustomerBankAccount, Payment}
+  use Gocardless.ClientApi.{Customer, CustomerBankAccount, Mandate, Payment}
   
   @doc false
   def start_link do

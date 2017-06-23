@@ -28,6 +28,7 @@ defmodule Gocardless.Api.Base do
   end
 
   def decode_json(resp_map) do
+    IO.inspect(resp_map)
     body = case resp_map.body do
       "" -> "No Body"
       body -> Poison.decode!(body)
