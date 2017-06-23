@@ -14,6 +14,7 @@ defmodule Gocardless.Api.Mandate do
   end
 
   def create(body) do
+    IO.inspect(body)
     request(:post, "/mandates", body)
     |> decode_json
   end
@@ -24,12 +25,12 @@ defmodule Gocardless.Api.Mandate do
   end
 
   def cancel(mandate_id) do
-    request(:post, "/mandates#{mandate_id}/actions/cancel", %{})
+    request(:post, "/mandates/#{mandate_id}/actions/cancel", %{})
     |> decode_json
   end
 
   def reinstate(mandate_id) do
-    request(:post, "/mandates#{mandate_id}/actions/reinstate", %{})
+    request(:post, "/mandates/#{mandate_id}/actions/reinstate", %{})
     |> decode_json
   end
 end
