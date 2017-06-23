@@ -4,12 +4,19 @@ Elixir wrapper for the GoCardless API.
 
 ## Installation
 
-The package can be installed by adding `gocardless` to your list of dependencies
-in `mix.exs`:
+1. Add `gocardless` to your list of dependencies in mix.exs:
 
 ```elixir
 def deps do
   [{:gocardless, "~> 0.1.0"}]
+end
+```
+
+2. Ensure `gocardless` is started before your application:
+
+```elixir
+def application do
+  [applications: [:gocardless]]
 end
 ```
 
