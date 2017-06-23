@@ -20,6 +20,15 @@ def application do
 end
 ```
 
+3. Add configuration to your app:
+
+```elixir
+config :gocardless,
+  api_base: "https://api-sandbox.gocardless.com/",
+  api_version: "2015-07-06",
+  access_token: "<your-token>"
+```
+
 ## Docs
 
 You can read the docs [here](https://hexdocs.pm/gocardless)
