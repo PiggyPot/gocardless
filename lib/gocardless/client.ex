@@ -11,7 +11,7 @@ defmodule Gocardless.Client do
     GenServer.start_link(__MODULE__, initial_state, [name: @client_name])
   end
 
-  def list_customers(params) do
+  def list_customers(params \\ %{}) do
     GenServer.call(@client_name, {:list_customers, params})
   end
   
