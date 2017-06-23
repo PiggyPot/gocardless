@@ -14,7 +14,6 @@ defmodule Gocardless.Api.Mandate do
   end
 
   def create(body) do
-    IO.inspect(body)
     request(:post, "/mandates", body)
     |> decode_json
   end
