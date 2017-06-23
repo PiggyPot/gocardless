@@ -1,5 +1,7 @@
 # Gocardless
 
+[![Hex pm](http://img.shields.io/hexpm/v/gocardless.svg?style=flat)](https://hex.pm/packages/gocardless)
+
 Elixir wrapper for the GoCardless API.
 
 ## Installation
