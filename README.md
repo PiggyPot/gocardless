@@ -16,3 +16,34 @@ end
 ## Docs
 
 You can read the docs [here](https://hexdocs.pm/gocardless)
+
+## Implementation state
+
+These are the priorities for us right now. If you want anything else feel free to add a pull request.
+
+- [x] Customers
+  - [x] List
+  - [x] Get
+  - [x] Create
+  - [x] Update
+- [ ] Mandates
+  - [ ] List
+  - [ ] Get
+  - [ ] Create
+  - [ ] Update
+  - [ ] Cancel
+  - [ ] Reinstate
+- [ ] BankAccounts
+  - [ ] List
+  - [ ] Get
+  - [ ] Create
+  - [ ] Update
+  - [ ] Disable
+- [ ] Payments
+  - [ ] List
+  - [ ] Get
+  - [ ] Create
+  - [ ] Update
+  - [ ] Cancel
+  - [ ] Retry
+
