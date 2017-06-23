@@ -33,7 +33,7 @@ These are the priorities for us right now. If you want anything else feel free t
   - [ ] Update
   - [ ] Cancel
   - [ ] Reinstate
-- [ ] BankAccounts
+- [ ] CustomerBankAccounts
   - [ ] List
   - [ ] Get
   - [ ] Create
