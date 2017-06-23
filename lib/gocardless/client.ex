@@ -47,7 +47,7 @@ defmodule Gocardless.Client do
   end
 
   def disable_customer_bank_account(customer_bank_account_id) do
-    GenServer.call(@client_name, {:update_customer_bank_account, customer_bank_account_id, params})
+    GenServer.call(@client_name, {:disable_customer_bank_account, customer_bank_account_id})
   end
 
   # GenServer callbacks
