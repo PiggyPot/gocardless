@@ -33,12 +33,12 @@ These are the priorities for us right now. If you want anything else feel free t
   - [ ] Update
   - [ ] Cancel
   - [ ] Reinstate
-- [ ] CustomerBankAccounts
-  - [ ] List
-  - [ ] Get
-  - [ ] Create
-  - [ ] Update
-  - [ ] Disable
+- [x] CustomerBankAccounts
+  - [x] List
+  - [x] Get
+  - [x] Create
+  - [x] Update
+  - [x] Disable
 - [ ] Payments
   - [ ] List
   - [ ] Get
