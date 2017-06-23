@@ -21,11 +21,11 @@ defmodule Gocardless.ClientApi.Payment do
         GenServer.call(@client_name, {:update_payment, payment_id, params})
       end
 
-      def cancel_payment(payment_id, params) do
+      def cancel_payment(payment_id, params \\ %{}) do
         GenServer.call(@client_name, {:cancel_payment, payment_id, params})
       end
 
-      def retry_payment(payment_id, params) do
+      def retry_payment(payment_id, params \\ %{}) do
         GenServer.call(@client_name, {:retry_payment, payment_id, params})
       end
 
