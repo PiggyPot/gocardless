@@ -1,6 +1,6 @@
 # Gocardless
 
-****Work in progress****
+Elixir wrapper for the GoCardless API.
 
 ## Installation
 
