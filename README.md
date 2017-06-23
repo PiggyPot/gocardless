@@ -39,11 +39,11 @@ These are the priorities for us right now. If you want anything else feel free t
   - [x] Create
   - [x] Update
   - [x] Disable
-- [ ] Payments
-  - [ ] List
-  - [ ] Get
-  - [ ] Create
-  - [ ] Update
-  - [ ] Cancel
-  - [ ] Retry
+- [x] Payments
+  - [x] List
+  - [x] Get
+  - [x] Create
+  - [x] Update
+  - [x] Cancel
+  - [x] Retry
 
