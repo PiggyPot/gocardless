@@ -29,7 +29,22 @@ config :gocardless,
   access_token: "<your-token>"
 ```
 
-## Docs
+4. Example usage:
+
+```elixir
+iex> params = %{email: "new@email.com"}
+iex> Gocardless.Client.update_customer("CU000999999998", %{customers: params})
+{:ok,
+  %{"customers" => %{"address_line1" => nil, "address_line2" => nil,
+      "address_line3" => nil, "city" => nil, "company_name" => nil,
+      "country_code" => "GB", "created_at" => "2017-06-23T13:04:45.459Z",
+      "email" => "new@email.com", "family_name" => "Lastname",
+      "given_name" => "Firstname", "id" => "CU000999999998", "language" => "en",
+      "metadata" => %{}, "postal_code" => nil, "region" => nil,
+      "swedish_identity_number" => nil}}}
+```
+
+## For more information, see the Hex docs
 
 You can read the docs [here](https://hexdocs.pm/gocardless)
 
