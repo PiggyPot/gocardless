@@ -26,13 +26,13 @@ These are the priorities for us right now. If you want anything else feel free t
   - [x] Get
   - [x] Create
   - [x] Update
-- [ ] Mandates
-  - [ ] List
-  - [ ] Get
-  - [ ] Create
-  - [ ] Update
-  - [ ] Cancel
-  - [ ] Reinstate
+- [x] Mandates
+  - [x] List
+  - [x] Get
+  - [x] Create
+  - [x] Update
+  - [x] Cancel
+  - [x] Reinstate
 - [x] CustomerBankAccounts
   - [x] List
   - [x] Get
@@ -46,4 +46,3 @@ These are the priorities for us right now. If you want anything else feel free t
   - [ ] Update
   - [ ] Cancel
   - [ ] Retry
-
