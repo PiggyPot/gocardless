@@ -82,7 +82,7 @@ These resources still need to be implemented.
 - [ ] Payouts
 - [ ] Redirect Flows
 - [ ] Refunds
-- [ ] Subscriptions
+- [x] Subscriptions
 
 These are other areas of the codebase that can be improved.
 
