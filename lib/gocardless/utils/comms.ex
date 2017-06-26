@@ -1,4 +1,4 @@
-defmodule Gocardless.Api.Base do
+defmodule Gocardless.Utils.Comms do
   @api_base Application.fetch_env!(:gocardless, :api_base)
   @api_version Application.fetch_env!(:gocardless, :api_version)
   @access_token Application.fetch_env!(:gocardless, :access_token)

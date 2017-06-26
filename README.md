@@ -62,32 +62,28 @@ iex> Gocardless.Client.create_customer(%{customers: params})
 
 You can read the docs [here](https://hexdocs.pm/gocardless)
 
+## Development Setup
+
+If you are making changes to this codebase and want to test your code, you will need to copy the sample secret file.
+
+```elixir
+cp config/secret.sample.exs config/secret.exs
+```
+
+Then add your GoCardless token where the key is `access_token`.
+
 ## Implementation state
 
-These are the priorities for us right now. If you want anything else feel free to add a pull request.
+These resources still need to be implemented.
 
-- [x] Customers
-  - [x] List
-  - [x] Get
-  - [x] Create
-  - [x] Update
-- [x] Mandates
-  - [x] List
-  - [x] Get
-  - [x] Create
-  - [x] Update
-  - [x] Cancel
-  - [x] Reinstate
-- [x] CustomerBankAccounts
-  - [x] List
-  - [x] Get
-  - [x] Create
-  - [x] Update
-  - [x] Disable
-- [x] Payments
-  - [x] List
-  - [x] Get
-  - [x] Create
-  - [x] Update
-  - [x] Cancel
-  - [x] Retry
+- [ ] Creditors
+- [ ] Creditor Bank Accounts
+- [ ] Events
+- [ ] Payouts
+- [ ] Redirect Flows
+- [ ] Refunds
+- [ ] Subscriptions
+
+These are other areas of the codebase that can be improved.
+
+- [ ] Testing error cases

@@ -2,10 +2,7 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :gocardless,
-  api_base: "https://api-sandbox.gocardless.com/",
-  api_version: "2015-07-06",
-  access_token: ""
+import_config "secret.exs"
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this

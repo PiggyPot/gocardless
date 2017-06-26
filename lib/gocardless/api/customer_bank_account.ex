@@ -1,5 +1,5 @@
 defmodule Gocardless.Api.CustomerBankAccount do
-  import Gocardless.Api.Base
+  import Gocardless.Utils.Comms
 
   def list(params) do
     url_params = params |> URI.encode_query
