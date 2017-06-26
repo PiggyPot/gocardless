@@ -80,7 +80,7 @@ These resources still need to be implemented.
 - [ ] Creditor Bank Accounts
 - [ ] Events
 - [ ] Payouts
-- [ ] Redirect Flows
+- [x] Redirect Flows
 - [ ] Refunds
 - [ ] Subscriptions
 
