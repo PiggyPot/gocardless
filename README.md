@@ -82,7 +82,7 @@ Resources that are implemented so far.
 - [x] Payments
 - [x] Creditors
 - [ ] Creditor Bank Accounts
-- [ ] Events
+- [x] Events
 - [x] Payouts
 - [ ] Redirect Flows
 - [x] Refunds
