@@ -33,7 +33,8 @@ defmodule Gocardless.Mixfile do
   defp deps do
     [{:ex_doc, "~> 0.14", only: :dev},
      {:httpotion, "~> 3.0.2"},
-     {:poison, "~> 3.0"}]
+     {:poison, "~> 3.0"},
+     {:credo, "~> 0.8", only: [:dev, :test], runtime: false}]
   end
 
   defp package do

@@ -85,7 +85,7 @@ Resources that are implemented so far.
 - [ ] Events
 - [ ] Payouts
 - [ ] Redirect Flows
-- [ ] Refunds
+- [x] Refunds
 - [x] Subscriptions
 
 Areas of the codebase that can be improved.
