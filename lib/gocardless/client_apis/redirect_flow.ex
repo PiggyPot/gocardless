@@ -1,7 +1,5 @@
 defmodule Gocardless.ClientApi.RedirectFlow do
-  @moduledoc """
-  Creates our internal functions for Redirect Flows that link to GenServer calls
-  """
+  @moduledoc false
   defmacro __using__(_) do
     quote do
       alias Gocardless.Api.RedirectFlow
