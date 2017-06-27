@@ -1,4 +1,7 @@
 defmodule Gocardless.Behaviour.RedirectFlow do
+  @moduledoc """
+  Defines the behaviour for Redirect Flows
+  """
   @doc """
   Gets a Redirect Flow based on their ID in GoCardless
 
