@@ -4,27 +4,32 @@ defmodule Gocardless.Api.Subscription do
   def list(params) do
     url_params = params |> URI.encode_query
 
-    request(:get, "/subscriptions?#{url_params}")
+    :get
+    |> request("/subscriptions?#{url_params}")
     |> decode_json
   end
 
   def get(subscription_id) do
-    request(:get, "/subscriptions/#{subscription_id}")
+    :get
+    |> request("/subscriptions/#{subscription_id}")
     |> decode_json
   end
 
   def create(body) do
-    request(:post, "/subscriptions", body)
+    :post
+    |> request("/subscriptions", body)
     |> decode_json
   end
 
   def update(subscription_id, body) do
-    request(:put, "/subscriptions/#{subscription_id}", body)
+    :put
+    |> request("/subscriptions/#{subscription_id}", body)
     |> decode_json
   end
 
   def cancel(subscription_id) do
-    request(:post, "/subscriptions/#{subscription_id}/actions/cancel", %{})
+    :post
+    |> request("/subscriptions/#{subscription_id}/actions/cancel", %{})
     |> decode_json
   end
 end
