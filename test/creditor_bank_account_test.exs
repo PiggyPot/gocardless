@@ -9,7 +9,7 @@ defmodule CreditorBankAccountTest do
   test "create_creditor_bank_account creates a creditor bank account" do
     {:ok, %{"creditor_bank_accounts" => new_creditor_ba}} = create_creditor_bank_account()
 
-    {:ok, %{"creditor_bank_accounts" => creditor}} = 
+    {:ok, %{"creditor_bank_accounts" => creditor}} =
       Gocardless.Client.get_creditor_bank_account(new_creditor_ba["id"])
 
     assert creditor["account_holder_name"] == "JOHN DOE"
@@ -20,7 +20,7 @@ defmodule CreditorBankAccountTest do
 
     Gocardless.Client.disable_creditor_bank_account(new_creditor_ba["id"])
 
-    {:ok, %{"creditor_bank_accounts" => creditor_bank_account}} = 
+    {:ok, %{"creditor_bank_accounts" => creditor_bank_account}} =
       Gocardless.Client.get_creditor_bank_account(new_creditor_ba["id"])
 
     assert creditor_bank_account["enabled"] == false
@@ -33,7 +33,7 @@ defmodule CreditorBankAccountTest do
       }
     }
 
-    {:ok, %{"creditors" => new_creditor}} = 
+    {:ok, %{"creditors" => new_creditor}} =
       Gocardless.Client.create_creditor(creditor_params)
 
     creditor_ba_params = %{
