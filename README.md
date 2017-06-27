@@ -74,9 +74,13 @@ Then add your GoCardless token where the key is `access_token`.
 
 ## Implementation state
 
-These resources still need to be implemented.
+Resources that are implemented so far.
 
-- [ ] Creditors
+- [x] Customers
+- [x] Customer Bank Accounts
+- [x] Mandates
+- [x] Payments
+- [x] Creditors
 - [ ] Creditor Bank Accounts
 - [ ] Events
 - [ ] Payouts
@@ -84,6 +88,6 @@ These resources still need to be implemented.
 - [ ] Refunds
 - [x] Subscriptions
 
-These are other areas of the codebase that can be improved.
+Areas of the codebase that can be improved.
 
 - [ ] Testing error cases

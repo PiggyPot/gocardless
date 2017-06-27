@@ -7,8 +7,7 @@ defmodule Gocardless.Client do
   """
   @client_name Gocardless.Client
   use GenServer
-  use Gocardless.ClientApi.{Customer, CustomerBankAccount, Mandate, Payment, Subscription}
-
+  use Gocardless.ClientApi.{Creditor, Customer, CustomerBankAccount, Mandate, Payment, Subscription}
   @doc false
   def start_link do
     initial_state = %{}
