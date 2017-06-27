@@ -4,7 +4,7 @@ defmodule Gocardless.ClientApi.Payment do
       alias Gocardless.Api.Payment
       @behaviour Gocardless.Behaviour.Payment
 
-      # Customer API
+      # Payment API
       def list_payments(params \\ %{}) do
         GenServer.call(@client_name, {:list_payments, params})
       end
@@ -29,7 +29,7 @@ defmodule Gocardless.ClientApi.Payment do
         GenServer.call(@client_name, {:retry_payment, payment_id, params})
       end
 
-      # Customer GenServer Callbacks
+      # Payment GenServer Callbacks
       def handle_call({:list_payments, params}, _from, state) do
         {:reply, Payment.list(params), state}
       end
