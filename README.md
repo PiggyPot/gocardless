@@ -81,7 +81,7 @@ These resources still need to be implemented.
 - [ ] Events
 - [ ] Payouts
 - [ ] Redirect Flows
-- [ ] Refunds
+- [x] Refunds
 - [ ] Subscriptions
 
 These are other areas of the codebase that can be improved.
