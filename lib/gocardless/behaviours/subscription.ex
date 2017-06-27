@@ -1,4 +1,8 @@
 defmodule Gocardless.Behaviour.Subscription do
+  @moduledoc """
+  Defines the behaviour for Subscriptions
+  """
+  
   @doc """
   Lists Subscriptions from GoCardless
 

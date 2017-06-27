@@ -1,8 +1,13 @@
 defmodule Gocardless.Api.Subscription do
+  @moduledoc """
+  Functions that map to Subscription endpoints
+
+  Talks to our `Gocardless.Utils.Comms` to do the requests
+  """
   import Gocardless.Utils.Comms
 
   def list(params) do
-    url_params = params |> URI.encode_query
+    url_params = URI.encode_query(params)
 
     :get
     |> request("/subscriptions?#{url_params}")

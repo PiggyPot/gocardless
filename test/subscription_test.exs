@@ -29,15 +29,14 @@ defmodule SubscriptionTest do
       subscriptions: %{name: "Updated subscription"}
     }
 
-    {:ok, %{"subscriptions" => updated_subscription}} = get_last_subscription_id()
-    |> Gocardless.Client.update_subscription(params)
+    {:ok, %{"subscriptions" => updated_subscription}} = Gocardless.Client.update_subscription(get_last_subscription_id(), params)
 
     assert updated_subscription["name"] == "Updated subscription"
   end
 
   test "get_subscription returns a subscription" do
     subscription_id = get_last_subscription_id()
-    {:ok, %{"subscriptions" => subscription}} = subscription_id |> Gocardless.Client.get_subscription
+    {:ok, %{"subscriptions" => subscription}} = Gocardless.Client.get_subscription(subscription_id)
     assert subscription["id"] == subscription_id
   end
 
@@ -64,8 +63,7 @@ defmodule SubscriptionTest do
   defp get_last_subscription_id do
     {:ok, %{"subscriptions" => subscriptions}} = Gocardless.Client.list_subscriptions(%{limit: 1})
 
-    {:ok, subscription} = subscriptions
-    |> Enum.fetch(-1)
+    {:ok, subscription} = Enum.fetch(subscriptions, -1)
 
     subscription["id"]
   end
