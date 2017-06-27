@@ -10,11 +10,12 @@ defmodule Gocardless.Client do
   use Gocardless.ClientApi.{
     Creditor,
     CreditorBankAccount,
-    Customer, 
-    CustomerBankAccount, 
-    Mandate, 
-    Payment, 
-    Refund
+    Customer,
+    CustomerBankAccount,
+    Mandate,
+    Payment,
+    Refund,
+    Subscription
   }
 
   @doc false
