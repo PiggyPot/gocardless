@@ -7,10 +7,72 @@ defmodule SubscriptionTest do
   end
 
   test "create_subscription creates a subscription" do
+    new_mandate = prepare_mandate()
+
     params = %{
-      creditors: %{
-        name: "Test Creditor"
+      subscriptions: %{
+        amount: "2500",
+        currency: "GBP",
+        name: "Test Subscription",
+        interval_unit: "monthly",
+        day_of_month:  "1",
+        links: %{mandate: new_mandate["id"]}
       }
+    }
+
+    {:ok, %{"subscriptions" => new_subscription}} = Gocardless.Client.create_subscription(params)
+    assert new_subscription["name"] == "Test Subscription"
+  end
+
+  test "update_subscription updates a subscription" do
+    params = %{
+      subscriptions: %{name: "Updated subscription"}
+    }
+
+    {:ok, %{"subscriptions" => updated_subscription}} = get_last_subscription_id()
+    |> Gocardless.Client.update_subscription(params)
+
+    assert updated_subscription["name"] == "Updated subscription"
+  end
+
+  test "get_subscription returns a subscription" do
+    subscription_id = get_last_subscription_id()
+    {:ok, %{"subscriptions" => subscription}} = subscription_id |> Gocardless.Client.get_subscription
+    assert subscription["id"] == subscription_id
+  end
+
+  test "cancel_subscription cancels a subscription" do
+    new_mandate = prepare_mandate()
+
+    params = %{
+      subscriptions: %{
+        amount: "2500",
+        currency: "GBP",
+        name: "Test Subscription",
+        interval_unit: "monthly",
+        day_of_month:  "1",
+        links: %{mandate: new_mandate["id"]}
+      }
+    }
+
+    {:ok, %{"subscriptions" => new_subscription}} = Gocardless.Client.create_subscription(params)
+    {:ok, %{"subscriptions" => cancelled_subscription}} = Gocardless.Client.cancel_subscription(new_subscription["id"])
+
+    assert cancelled_subscription["status"] == "cancelled"
+  end
+
+  defp get_last_subscription_id do
+    {:ok, %{"subscriptions" => subscriptions}} = Gocardless.Client.list_subscriptions(%{limit: 1})
+
+    {:ok, subscription} = subscriptions
+    |> Enum.fetch(-1)
+
+    subscription["id"]
+  end
+
+  defp prepare_mandate do
+    params = %{
+      creditors: %{name: "Test Creditor"}
     }
     {:ok, %{"creditors" => new_creditor}} = Gocardless.Client.create_creditor(params)
 
@@ -44,43 +106,6 @@ defmodule SubscriptionTest do
       }
     }
     {:ok, %{"mandates" => new_mandate}} = Gocardless.Client.create_mandate(params)
-
-    params = %{
-      subscriptions: %{
-        amount: "2500",
-        currency: "GBP",
-        name: "Test Subscription",
-        interval_unit: "monthly",
-        day_of_month:  "1",
-        links: %{mandate: new_mandate["id"]}
-      }
-    }
-
-    {:ok, %{"subscriptions" => new_subscription}} = Gocardless.Client.create_subscription(params)
-    {:ok, %{"subscriptions" => subscription}} = Gocardless.Client.get_subscription(new_subscription["id"])
-    assert subscription["name"] == "Test Subscription"
-  end
-
-  test "update_subscription updates a subscription" do
-    params = %{
-      subscriptions: %{
-        name: "Updated subscription"
-      }
-    }
-
-    {:ok, %{"subscriptions" => updated_subscription}} = get_last_subscription_id()
-    |> Gocardless.Client.update_subscription(params)
-
-    {:ok, %{"subscriptions" => subscription}} = Gocardless.Client.get_subscription(updated_subscription["id"])
-    assert subscription["name"] == "Updated subscription"
-  end
-
-  defp get_last_subscription_id do
-    {:ok, %{"subscriptions" => subscriptions}} = Gocardless.Client.list_subscriptions(%{limit: 1})
-
-    {:ok, subscription} = subscriptions
-    |> Enum.fetch(-1)
-
-    subscription["id"]
+    new_mandate
   end
 end
