@@ -13,6 +13,7 @@ defmodule Gocardless.Client do
     CustomerBankAccount,
     Mandate,
     Payment,
+    Payout,
     Refund,
     Subscription
   }

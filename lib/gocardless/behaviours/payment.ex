@@ -56,8 +56,8 @@ defmodule Gocardless.Behaviour.Payment do
           }
         }
       }
-      iex> Gocardless.Client.create_payment(params)                                                                        {:ok,
-      {:ok, 
+      iex> Gocardless.Client.create_payment(params)
+      {:ok,
       %{"payments" => %{"amount" => 100, "amount_refunded" => 0,
           "charge_date" => "2017-06-30", "created_at" => "2017-06-23T15:27:18.656Z",
           "currency" => "GBP", "description" => nil, "id" => "PM000099999999",
@@ -92,7 +92,7 @@ defmodule Gocardless.Behaviour.Payment do
   @callback update_payment(String.t, map()) :: tuple()
 
   @doc """
-  Cancels the payment if it has not already been 
+  Cancels the payment if it has not already been
   submitted to the banks.
 
   ## Examples
@@ -110,7 +110,7 @@ defmodule Gocardless.Behaviour.Payment do
   @callback cancel_payment(String.t, map()) :: tuple()
 
   @doc """
-  Retries a failed payment if the underlying mandate 
+  Retries a failed payment if the underlying mandate
   is active.
 
   ## Examples
