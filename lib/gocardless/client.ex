@@ -8,7 +8,8 @@ defmodule Gocardless.Client do
   @client_name Gocardless.Client
   use GenServer
   use Gocardless.ClientApi.{
-    Creditor, 
+    Creditor,
+    CreditorBankAccount,
     Customer, 
     CustomerBankAccount, 
     Mandate, 
