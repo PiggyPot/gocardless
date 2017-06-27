@@ -34,8 +34,8 @@ defmodule CreditorTest do
 
   defp get_last_creditor_id do
     {:ok, %{"creditors" => creditors}} = Gocardless.Client.list_creditors
-    
-    {:ok, creditor} = creditors 
+
+    {:ok, creditor} = creditors
     |> Enum.fetch(-1)
 
     creditor["id"]
