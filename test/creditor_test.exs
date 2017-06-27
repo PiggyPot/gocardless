@@ -3,7 +3,6 @@ defmodule CreditorTest do
 
   test "list_creditors returns response formated as required" do
     {:ok, %{"creditors" => creditors}} = Gocardless.Client.list_creditors
-    IO.inspect creditors
     assert is_list(creditors)
   end
 
