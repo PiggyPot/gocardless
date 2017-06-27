@@ -4,7 +4,7 @@ defmodule Gocardless.Api.CreditorBankAccount do
   import Gocardless.Utils.Comms
 
   def list(params \\ %{}) do
-    url_params = params |> URI.encode_query
+    url_params = URI.encode_query(params)
 
     :get
     |> request("/creditor_bank_accounts?#{url_params}")
