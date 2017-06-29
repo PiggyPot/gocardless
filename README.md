@@ -81,10 +81,10 @@ Resources that are implemented so far.
 - [x] Mandates
 - [x] Payments
 - [x] Creditors
-- [ ] Creditor Bank Accounts
 - [x] Events
+- [x] Creditor Bank Accounts
 - [x] Payouts
-- [ ] Redirect Flows
+- [x] Redirect Flows
 - [x] Refunds
 - [x] Subscriptions
 

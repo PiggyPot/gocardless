@@ -18,8 +18,8 @@ defmodule Gocardless.Api.Creditor do
     |> decode_json
   end
 
-  def update(customer_id, body) do
-    request(:put, "/creditors/#{customer_id}", body)
+  def update(creditor_id, body) do
+    request(:put, "/creditors/#{creditor_id}", body)
     |> decode_json
   end
 end

@@ -1,7 +1,5 @@
 defmodule Gocardless.ClientApi.Subscription do
-  @moduledoc """
-  Creates our internal functions for Subscriptions that link to GenServer calls
-  """
+  @moduledoc false
   defmacro __using__(_) do
     quote do
       alias Gocardless.Api.Subscription

@@ -18,7 +18,7 @@ defmodule CreditorTest do
     assert creditor["name"] == "Test Creditor"
   end
 
-  test "update_creditor creates a creditor" do
+  test "update_creditor updates a creditor" do
     params = %{
       creditors: %{
         name: "Updated Creditor"
