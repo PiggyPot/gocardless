@@ -25,11 +25,25 @@ defmodule SubscriptionTest do
   end
 
   test "update_subscription updates a subscription" do
+    new_mandate = prepare_mandate()
+
+    params = %{
+      subscriptions: %{
+        amount: "2500",
+        currency: "GBP",
+        name: "Test Subscription",
+        interval_unit: "monthly",
+        day_of_month:  "1",
+        links: %{mandate: new_mandate["id"]}
+      }
+    }
+
+    {:ok, %{"subscriptions" => new_subscription}} = Gocardless.Client.create_subscription(params)
     params = %{
       subscriptions: %{name: "Updated subscription"}
     }
 
-    {:ok, %{"subscriptions" => updated_subscription}} = Gocardless.Client.update_subscription(get_last_subscription_id(), params)
+    {:ok, %{"subscriptions" => updated_subscription}} = Gocardless.Client.update_subscription(new_subscription["id"], params)
 
     assert updated_subscription["name"] == "Updated subscription"
   end

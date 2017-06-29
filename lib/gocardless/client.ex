@@ -9,11 +9,13 @@ defmodule Gocardless.Client do
   use GenServer
   use Gocardless.ClientApi.{
     Creditor,
+    CreditorBankAccount,
     Customer,
     CustomerBankAccount,
     Mandate,
     Payment,
     Payout,
+    RedirectFlow,
     Refund,
     Subscription
   }
