@@ -14,6 +14,7 @@ defmodule Gocardless.Client do
     CustomerBankAccount,
     Mandate,
     Payment,
+    RedirectFlow,
     Refund,
     Subscription
   }
