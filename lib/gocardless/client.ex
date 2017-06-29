@@ -12,6 +12,7 @@ defmodule Gocardless.Client do
     CreditorBankAccount,
     Customer,
     CustomerBankAccount,
+    Event,
     Mandate,
     Payment,
     Payout,
