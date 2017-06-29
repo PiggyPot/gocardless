@@ -81,12 +81,12 @@ Resources that are implemented so far.
 - [x] Mandates
 - [x] Payments
 - [x] Creditors
-- [ ] Creditor Bank Accounts
-- [ ] Events
-- [ ] Payouts
-- [ ] Redirect Flows
+- [x] Events
+- [x] Creditor Bank Accounts
+- [x] Payouts
+- [x] Redirect Flows
 - [x] Refunds
-- [ ] Subscriptions
+- [x] Subscriptions
 
 Areas of the codebase that can be improved.
 
