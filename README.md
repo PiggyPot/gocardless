@@ -83,7 +83,8 @@ Resources that are implemented so far.
 - [x] Creditors
 - [x] Creditor Bank Accounts
 - [ ] Events
-- [ ] Payouts
+- [x] Payouts
+- [ ] Redirect Flows
 - [x] Redirect Flows
 - [x] Refunds
 - [x] Subscriptions
