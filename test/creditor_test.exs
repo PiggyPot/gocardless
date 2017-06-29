@@ -33,7 +33,7 @@ defmodule CreditorTest do
   end
 
   defp get_last_creditor_id do
-    {:ok, %{"creditors" => creditors}} = Gocardless.Client.list_creditors
+    {:ok, %{"creditors" => creditors}} = Gocardless.Client.list_creditors(%{limit: 1})
     
     {:ok, creditor} = creditors 
     |> Enum.fetch(-1)
