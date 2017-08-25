@@ -10,7 +10,7 @@ Elixir wrapper for the GoCardless API.
 
 ```elixir
 def deps do
-  [{:gocardless, "~> 1.0.0"}]
+  [{:gocardless, "~> 1.0.1"}]
 end
 ```
 

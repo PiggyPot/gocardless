@@ -3,6 +3,10 @@ defmodule Gocardless do
   use Application
 
   def start(_type, _args) do
-    Gocardless.Client.start_link
+    import Supervisor.Spec, warn: false
+
+    Supervisor.start_link([
+      worker(Gocardless.Client, [])
+    ], strategy: :one_for_one, name: GoCardless.Supervisor)
   end
 end

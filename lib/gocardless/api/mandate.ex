@@ -5,6 +5,7 @@ defmodule Gocardless.Api.Mandate do
     url_params = params |> URI.encode_query
 
     request(:get, "/mandates?#{url_params}")
+    |> IO.inspect(label: "Mandate Info")
     |> decode_json
   end
 

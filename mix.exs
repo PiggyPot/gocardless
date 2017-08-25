@@ -3,7 +3,7 @@ defmodule Gocardless.Mixfile do
 
   def project do
     [app: :gocardless,
-     version: "1.0.0",
+     version: "1.0.1",
      description: "Elixir wrapper for the GoCardless API",
      package: package(),
      elixir: "~> 1.4",
@@ -32,7 +32,7 @@ defmodule Gocardless.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:ex_doc, "~> 0.14", only: :dev},
-     {:httpotion, "~> 3.0.2"},
+     {:httpotion, "~> 3.0.3"},
      {:poison, "~> 3.0"},
      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}]
   end
