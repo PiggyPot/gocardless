@@ -42,10 +42,12 @@ config :gocardless,
 
 ```elixir
 iex> params = %{
-  email: "name@email.com",
-  given_name: "Firstname",
-  family_name: "Lastname",
-  country_code: "GB"
+  customers: %{
+    email: "name@email.com",
+    given_name: "Firstname",
+    family_name: "Lastname",
+    country_code: "GB"
+  }
 }
 iex> Gocardless.Client.create_customer(%{customers: params})
 {:ok,
