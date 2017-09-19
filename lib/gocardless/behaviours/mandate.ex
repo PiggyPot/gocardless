@@ -149,4 +149,21 @@ defmodule Gocardless.Behaviour.Mandate do
            "scheme" => "bacs", "status" => "pending_submission"}}}
   """
   @callback reinstate_mandate(String.t) :: tuple()
+
+  @doc """
+  Creates a new mandate preview
+
+  ## Examples
+
+      iex> params = %{
+        links: %{mandate: "MD123"}
+      }
+      iex> Gocardless.Client.pdf_preview(%{params: params})
+      {:ok, %{
+        "mandate_pdfs" => %{
+          "url" => "https://mandate-previews.gocardless.com/?token=lhulxcPEbT9v3W0QUpBOxhlGUSYEayQQ4VVrpO7YnUKRYynP5",
+          "expires_at" => "2014-05-08T17:01:06.000Z"
+        }}}
+  """
+  @callback pdf_preview(map()) :: tuple()
 end
