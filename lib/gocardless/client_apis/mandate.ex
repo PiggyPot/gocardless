@@ -29,6 +29,10 @@ defmodule Gocardless.ClientApi.Mandate do
         GenServer.call(@client_name, {:reinstate_mandate, mandate_id})
       end
 
+      def pdf_preview(params) do
+        GenServer.call(@client_name, {:pdf_preview, params})
+      end
+
       # Mandate GenServer Callbacks
       def handle_call({:list_mandates, params}, _from, state) do
         {:reply, Mandate.list(params), state}
@@ -52,6 +56,10 @@ defmodule Gocardless.ClientApi.Mandate do
 
       def handle_call({:reinstate_mandate, mandate_id}, _from, state) do
         {:reply, Mandate.reinstate(mandate_id), state}
+      end
+
+      def handle_call({:pdf_preview, params}, _from, state) do
+        {:reply, Mandate.pdf_preview(params), state}
       end
     end
   end

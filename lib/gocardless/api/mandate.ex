@@ -5,7 +5,6 @@ defmodule Gocardless.Api.Mandate do
     url_params = params |> URI.encode_query
 
     request(:get, "/mandates?#{url_params}")
-    |> IO.inspect(label: "Mandate Info")
     |> decode_json
   end
 
@@ -32,5 +31,11 @@ defmodule Gocardless.Api.Mandate do
   def reinstate(mandate_id) do
     request(:post, "/mandates/#{mandate_id}/actions/reinstate", %{})
     |> decode_json
+  end
+
+  def pdf_preview(body) do
+    :post
+    |> request("/mandate_pdfs", body)
+    |> decode_json()
   end
 end
