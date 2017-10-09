@@ -49,7 +49,7 @@ iex> params = %{
     country_code: "GB"
   }
 }
-iex> Gocardless.Client.create_customer(%{customers: params})
+iex> Gocardless.Client.create_customer(params)
 {:ok,
   %{"customers" => %{"address_line1" => nil, "address_line2" => nil,
       "address_line3" => nil, "city" => nil, "company_name" => nil,
