@@ -28,16 +28,20 @@ defmodule Gocardless.Utils.Comms do
   end
 
   def decode_json(resp_map) do
-    body = case resp_map.body do
-      "" -> "No Body"
-      body -> Poison.decode!(body)
+    case resp_map.body do
+      "" -> {:ok, "No Body"}
+      body -> Poison.decode(body)
     end
+    |> create_response(resp_map)
+ end
 
+  defp create_response({:ok, body}, resp_map) do
     case resp_map.status_code do
       x when x in [200, 201, 204] -> {:ok, body}
       _ -> {:error, body}
     end
   end
+  defp create_response({:error, _}, _), do: {:error, "There was an issue decoding the body"}
 
   defp api_url(url) do
     @api_base <> url
