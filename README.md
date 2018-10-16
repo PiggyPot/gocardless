@@ -96,4 +96,4 @@ Areas of the codebase that can be improved.
 
 ## License
 
-The `mangoex` lib is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+The `gocardless` lib is released under the [MIT License](http://www.opensource.org/licenses/MIT).
